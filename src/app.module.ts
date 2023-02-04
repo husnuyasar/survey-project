@@ -13,6 +13,7 @@ import { FormsModule } from './app/forms/forms.module';
 import { QuestionsModule } from './app/questions/questions.module';
 import { OptionsModule } from './app/options/options.module';
 import { SubmitFormsModule } from './app/submit-forms/submit-forms.module';
+import { HomeController } from './app/home/home.controller';
 
 @Module({
   imports: [
@@ -50,5 +51,6 @@ import { SubmitFormsModule } from './app/submit-forms/submit-forms.module';
       inject: [Reflector, JwtService, UsersService]
     }
   ],
+  controllers: [HomeController],
 })
 export class AppModule {}
