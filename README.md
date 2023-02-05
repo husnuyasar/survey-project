@@ -58,7 +58,7 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-## Seeing project documentaion
+## Seeing project documentation
 ```bash
 $ npm run compodoc
 ```
