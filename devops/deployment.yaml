@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: survey-project
+spec:
+  selector:
+    matchLabels:
+      app: survey-project
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: survey-project
+    spec:
+      containers:
+        - name: survey-project
+          image: husnuyasar/survey-project
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+          ports:
+            - containerPort: 8080
+          volumeMounts:
+            - mountPath: /usr/src/app/secrets
+              name: survey-project
+      volumes:
+        - name: survey-project
+          secret:
+            secretName: survey-project
+          
